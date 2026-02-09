@@ -19,11 +19,10 @@ const int WIDTH = 15;
 
     int px = 9, py = 1; // Pac-Man position
     int score = 0;
-    int g1x = 1, g1y = 1;
-    int g2x = 1, g2y = 3;
-    int g3x = 1, g3y = 5;
+	int g1x = 1, g1y = 1; //Ghost 1 position
+	int g2x = 1, g2y = 3; //Ghost 2 position
+	int g3x = 1, g3y = 5; //Ghost 3 position
     bool GhostRight = true;
-    bool lost = false;
 
 char map[7][15] = {
     {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'},
@@ -41,7 +40,6 @@ void draw()
     {
         for (int x = 0; x < WIDTH; x++)
         {
-
             if (x == g1x && y == g1y)
             {
                 cout << 'G';
@@ -114,6 +112,7 @@ int main()
             }
 
         }
+		//Getting User Input
         if (_kbhit())
         {
             char key = _getch();
